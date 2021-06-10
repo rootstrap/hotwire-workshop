@@ -1,0 +1,5 @@
+<div class="w-full">
+  <% flash.each do |role, message| %>
+    <%= render(AlertComponent.new(role: role, message: message)) %>
+  <% end %>
+</div>
