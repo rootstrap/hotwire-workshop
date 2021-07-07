@@ -1,0 +1,17 @@
+<%= turbo_frame_tag dom_id(chat_room) do %>
+  <%= form_with model: chat_room, data: { turbo: false }, class: %w[mt-8 space-y-6] do |f| %>
+    <%= render(FieldComponent.new(:name, form: f, type: :string, placeholder: 'Name', autofocus: true, required: true, value: chat_room.name)) %>
+    <%= render(ButtonComponent.new(text: 'Update')) %>
+  <% end %>
+
+  <div class="min-w-full bg-white mb-4 shadow overflow-hidden rounded-lg">
+    <div class="flex px-4 py-4 sm:px-6">
+      <div class="flex-1">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          <%= chat_room.name %>
+        </h3>
+      </div>
+      <%= link_to 'Edit', edit_chat_room_path(chat_room), class: %w[text-indigo-600 hover:text-indigo-900] %>
+    </div>
+  </div>
+<% end %>
