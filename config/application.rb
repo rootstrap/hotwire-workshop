@@ -20,7 +20,7 @@ module RailsHotwireBase
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.add_autoload_paths_to_load_path = false
-    config.active_job.queue_adapter = :delayed_job
+    # config.active_job.queue_adapter = :delayed_job
 
     ActionMailer::Base.smtp_settings = {
       address: 'smtp.sendgrid.net',

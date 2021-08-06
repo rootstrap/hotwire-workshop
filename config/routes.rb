@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :chat_rooms, only: %i[index edit update]
+  resources :chat_rooms, only: %i[index show edit update] do
+    resources :messages, only: %i[index create]
+  end
 end

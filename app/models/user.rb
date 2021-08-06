@@ -28,7 +28,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  has_many :chat_room_users, dependent: :destroy
-  has_many :chat_rooms, through: :chat_room_users
   has_many :messages, dependent: :destroy
 end

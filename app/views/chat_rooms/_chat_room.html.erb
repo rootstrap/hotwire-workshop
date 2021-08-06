@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id(chat_room) do %>
+  <div class="min-w-full bg-white mb-4 shadow overflow-hidden rounded-lg" data-chat-rooms-target="chatRoom">
+    <div class="flex hover:bg-gray-200">
+      <%= link_to chat_room_path(chat_room), class: %w[flex-1 px-4 py-4 sm:px-6], data: { turbo: false } do %>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          <%= chat_room.name %>
+        </h3>
+      <% end %>
+      <%= link_to 'Edit',
+                  edit_chat_room_path(chat_room),
+                  class: %w[px-4 py-4 sm:px-6 text-indigo-600 hover:text-indigo-900] %>
+    </div>
+  </div>
+<% end %>
