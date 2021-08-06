@@ -20,6 +20,12 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Message < ApplicationRecord
-  belongs_to :chat_rooms
+  include ActionView::RecordIdentifier
+
+  belongs_to :chat_room
   belongs_to :user
+
+  after_create_commit -> { broadcast_append_to chat_room, target: "#{dom_id(chat_room)}_messages" }
+
+  validates :content, presence: true
 end

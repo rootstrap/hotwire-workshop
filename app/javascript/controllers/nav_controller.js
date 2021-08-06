@@ -4,8 +4,8 @@ export default class extends Controller {
   static targets = ['userMenu', 'mobileMenu', 'mobileOpenMenuIcon', 'mobileCloseMenuIcon']
 
   toggleUserMenuVisibility() {
-    if (this.userMenuTarget.classList.contains('opacity-0')) {
-      this.userMenuTarget.classList.remove('transition', 'ease-in', 'duration-100');
+    if (this.userMenuTarget.classList.contains('hidden')) {
+      this.userMenuTarget.classList.remove('transition', 'ease-in', 'duration-100', 'hidden');
       this.userMenuTarget.classList.add('transition', 'ease-out', 'duration-100');
       this.userMenuTarget.classList.remove('transform', 'opacity-0', 'scale-95');
       this.userMenuTarget.classList.add('transform', 'opacity-100', 'scale-100');
@@ -13,9 +13,9 @@ export default class extends Controller {
       this.userMenuTarget.classList.remove('transition', 'ease-out', 'duration-100');
       this.userMenuTarget.classList.add('transition', 'ease-in', 'duration-100');
       this.userMenuTarget.classList.remove('transform', 'opacity-100', 'scale-100');
-      this.userMenuTarget.classList.add('transform', 'opacity-0', 'scale-95');
+      this.userMenuTarget.classList.add('transform', 'opacity-0', 'scale-95', 'hidden');
     }
-  };
+  }
 
   toggleMobileMenuVisibility() {
     if (this.mobileOpenMenuIconTarget.classList.contains('block')) {
@@ -28,4 +28,4 @@ export default class extends Controller {
       this.mobileCloseMenuIconTarget.classList.replace('block', 'hidden');
     }
   }
-};
+}

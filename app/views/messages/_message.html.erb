@@ -1,0 +1,8 @@
+<div class="mt-3">
+  <p class="text-sm text-indigo-400"><%= message.user.email %></p>
+  <p class="text-sm text-gray-400">
+    <%= message.created_at.strftime('%d/%m/%Y') %>
+    <span class="text-xs opacity-70"><%= message.created_at.strftime('%l:%M %p') %></span>
+  </p>
+  <%= simple_format message.content, class: 'text-gray-600' %>
+</div>
