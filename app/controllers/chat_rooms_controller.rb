@@ -9,7 +9,9 @@ class ChatRoomsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    sleep 2
+  end
 
   def update
     chat_room.update!(chat_room_params)
