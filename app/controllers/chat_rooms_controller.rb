@@ -7,9 +7,9 @@ class ChatRoomsController < ApplicationController
     @chat_rooms = search_applied? ? filtered_chat_rooms : ChatRoom.order(:name)
   end
 
-  def show; end
-
-  def edit; end
+  def edit
+    sleep 2
+  end
 
   def update
     chat_room.update!(chat_room_params)
