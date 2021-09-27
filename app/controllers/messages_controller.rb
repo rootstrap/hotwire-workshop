@@ -10,13 +10,10 @@ class MessagesController < ApplicationController
   def create
     @message = chat_room.messages.new(message_params.merge(user: current_user))
 
-    respond_to do |format|
-      if @message.save
-        format.turbo_stream { head :no_content }
-        format.html { redirect_to chat_room }
-      else
-        head :bad_request
-      end
+    if @message.save
+      redirect_to chat_room
+    else
+      head :bad_request
     end
   end
 
