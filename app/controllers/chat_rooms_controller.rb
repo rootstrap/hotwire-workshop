@@ -4,6 +4,7 @@ class ChatRoomsController < ApplicationController
   helper_method :chat_room
 
   def index
+    sleep 1
     @chat_rooms = search_applied? ? filtered_chat_rooms : ChatRoom.order(:name)
   end
 
