@@ -1,6 +1,6 @@
 # Hotwire Workshop
 
-The goal of this repository is to give developers a playground to understand and get to know the benefits that Hotwire brings to the user experience. There are 4 exercises that will cover Turbo, the heart of Hotwire, and Stimulus, a modest Javascript framework to cover for those cases where some custom code is needed.
+The goal of this repository is to give developers a playground to understand and get to know the benefits that [Hotwire](https://hotwired.dev/) brings to the user experience. There are 4 exercises that will cover [Turbo](https://turbo.hotwired.dev/), the heart of Hotwire, and [Stimulus](https://stimulus.hotwired.dev/), a modest Javascript framework to cover for those cases where some custom code is needed.
 
 All of the exercises are based on a chat application built with Rails 6. To run it, you'll need to install the following things:
 
